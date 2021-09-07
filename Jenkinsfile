@@ -8,6 +8,7 @@ pipeline {
             steps {
                 sh '''
                     ./jenkins/build/build.sh npm install && npm test
+                ''' 
                     
             }
         }
@@ -15,19 +16,21 @@ pipeline {
             steps {
                 sh '''
                     ./jenkins/buildimage/buildimage.sh
+                '''
             }
         }
         stage('PushtoDockerhub') {
             steps {
                 sh '''
                     ./jenkins/push/push.sh
-      
+                ''' 
             }
         }
         stages('Deplyment on target server') {
             steps {
                 sh '''
                     ./jenkins/deploy/deploy.sh 
+                '''
             }
         }
     }
