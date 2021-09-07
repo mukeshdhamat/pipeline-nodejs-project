@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    envirinment {
+    environment {
         PASS = credentials('registry_pass')
     }
     stages {
@@ -26,7 +26,7 @@ pipeline {
                 ''' 
             }
         }
-        stages('Deplyment on target server') {
+        stage('Deplyment on target server') {
             steps {
                 sh '''
                     ./jenkins/deploy/deploy.sh 
