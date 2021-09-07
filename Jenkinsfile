@@ -7,7 +7,7 @@ pipeline {
         stage('Buildcode') {
             steps {
                 sh '''
-                    ./jenkins/build/build.sh npm install && npm test
+                    ./jenkins/build/build.sh
                 ''' 
                     
             }
