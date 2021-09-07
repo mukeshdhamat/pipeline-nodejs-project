@@ -6,7 +6,6 @@ pipeline {
     stages {
         stage('Buildcode') {
             steps {
-                cleanWs()
                 sh '''
                     ./jenkins/build/build.sh npm install && npm test
                 ''' 
